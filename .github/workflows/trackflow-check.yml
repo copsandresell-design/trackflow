@@ -1,0 +1,39 @@
+name: TrackFlow Check
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Récupérer le code
+        uses: actions/checkout@v4
+
+      - name: Installer Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Installer les dépendances backend
+        run: |
+          cd backend
+          npm install
+
+      - name: Installer les dépendances frontend
+        run: |
+          cd frontend
+          npm install
+
+      - name: Lancer les tests backend
+        run: |
+          cd backend
+          npm test --if-present
+
+      - name: Lancer les tests frontend
+        run: |
+          cd frontend
+          npm test --if-present
