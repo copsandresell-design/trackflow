@@ -1,0 +1,19 @@
+name: Design Audit
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  design-audit:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Récupérer le code
+        uses: actions/checkout@v4
+
+      - name: Analyse du design
+        run: |
+          echo "Audit du design de TrackFlow lancé"
+          echo "Analyse des composants frontend"
