@@ -1,0 +1,20 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Récupérer le code
+        uses: actions/checkout@v4
+
+      - name: Déploiement simulé
+        run: |
+          echo "🚀 Déploiement automatique de TrackFlow"
+          echo "📱 Préparation de la build"
+          echo "✅ Déploiement terminé avec succès"
