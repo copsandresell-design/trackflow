@@ -19,8 +19,8 @@ jobs:
           node-version: 20
 
       - name: Installer les dépendances backend
-       run: npm install
-       working-directory: ./backend 
+        run: npm install
+        working-directory: ./backend
 
       - name: Installer les dépendances frontend
         run: npm install
@@ -28,7 +28,7 @@ jobs:
 
       - name: Lancer les tests backend
         run: npm test --if-present
-        g-directory: ./backend
+        working-directory: ./backend
 
       - name: Lancer les tests frontend
         run: npm test --if-present
